@@ -27,13 +27,13 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithWhite:0.87 alpha:1.0];
     
-    // 生成二维码(Default)
+    // 【1】生成二维码(Default)
     [self setupGenerateQRCode];
     
-    // 生成二维码(中间带有图标)
+    // 【2】生成二维码(中间带有图标)
     [self setupGenerate_Icon_QRCode];
     
-    // 生成二维码(彩色)
+    // 【3】生成二维码(彩色)
     [self setupGenerate_Color_QRCode];
 
 }
@@ -51,7 +51,7 @@
     [self.view addSubview:imageView];
     
     // 2、将CIImage转换成UIImage，并放大显示
-    imageView.image = [SGQRCodeTool SG_generateWithDefaultQRCodeData:@"https://github.com/kingsic" imageViewWidth:imageViewW];
+    imageView.image = [SGQRCodeTool SG_generateWithDefaultQRCodeData:@"user:app password:123456" imageViewWidth:imageViewW];
     
 #pragma mark - - - 模仿支付宝二维码样式（添加用户头像）
     CGFloat scale = 0.22;
@@ -86,7 +86,7 @@
     CGFloat scale = 0.2;
     
     // 2、将最终合得的图片显示在UIImageView上
-    imageView.image = [SGQRCodeTool SG_generateWithLogoQRCodeData:@"https://github.com/kingsic" logoImageName:@"icon_image" logoScaleToSuperView:scale];
+    imageView.image = [SGQRCodeTool SG_generateWithLogoQRCodeData:@"https://www.baidu.com" logoImageName:@"icon_image" logoScaleToSuperView:scale];
     
 }
 
@@ -103,7 +103,7 @@
     [self.view addSubview:imageView];
     
     // 2、将二维码显示在UIImageView上
-    imageView.image = [SGQRCodeTool SG_generateWithColorQRCodeData:@"https://github.com/kingsic" backgroundColor:[CIColor colorWithRed:1 green:0 blue:0.8] mainColor:[CIColor colorWithRed:0.3 green:0.2 blue:0.4]];
+    imageView.image = [SGQRCodeTool SG_generateWithColorQRCodeData:@"www.cnblogs.com/xiaomanon" backgroundColor:[CIColor colorWithRed:1 green:0 blue:0.8] mainColor:[CIColor colorWithRed:0.3 green:0.2 blue:0.4]];
 }
 
 

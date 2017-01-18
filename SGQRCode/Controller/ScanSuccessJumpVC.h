@@ -15,6 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * 显示二维码扫描结果的页面
+ */
 @interface ScanSuccessJumpVC : UIViewController
 
 /** 接收扫描的二维码信息 */

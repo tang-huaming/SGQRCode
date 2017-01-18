@@ -15,6 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * 二维码扫描页面
+ */
 @interface SGScanningQRCodeVC : UIViewController
 
 @end

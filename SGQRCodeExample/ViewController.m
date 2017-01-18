@@ -24,12 +24,22 @@
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
+/**
+ 跳转到生成二维码的页面
+
+ @param sender
+ */
 - (IBAction)generateQRCode:(id)sender {
     SGGenerateQRCodeVC *VC = [[SGGenerateQRCodeVC alloc] init];
     
     [self.navigationController pushViewController:VC animated:YES];
 }
 
+/**
+ 跳转到扫描二维码页面
+
+ @param sender 
+ */
 - (IBAction)scanningQRCode:(id)sender {
     // 1、 获取摄像设备
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];

@@ -15,6 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * MARK: 生成二维码的页面
+ */
 @interface SGGenerateQRCodeVC : UIViewController
 
 @end

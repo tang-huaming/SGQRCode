@@ -173,9 +173,6 @@
     
     return [UIImage imageWithCIImage:colorImage];
 }
-
-
-
 @end
 
 

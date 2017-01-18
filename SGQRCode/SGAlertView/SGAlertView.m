@@ -14,28 +14,38 @@
 //  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 #import "SGAlertView.h"
-
-#define SG_screenWidth [UIScreen mainScreen].bounds.size.width
+// 屏幕尺寸
+#define SG_screenWidth  [UIScreen mainScreen].bounds.size.width
 #define SG_screenHeight [UIScreen mainScreen].bounds.size.height
+
 #define SG_alertView_width 280
 #define SG_margin_X (SG_screenWidth - SG_alertView_width) * 0.5
 #define SG_lineColor [UIColor colorWithRed:200 / 255.0 green:200 / 255.0 blue:200 / 255.0 alpha:1.0]
+
 @interface SGAlertView ()
 
-/** 遮盖 */
+/** 
+ * 遮盖 
+ */
 @property (nonatomic, strong) UIButton *coverView;
-/** 背景View */
+/** 
+ * 背景View 
+ */
 @property (nonatomic, strong) UIView *bg_view;
 
-/** 标题提示文字 */
+/** 
+ * 标题提示文字 
+ */
 @property (nonatomic, copy) NSString *messageTitle;
-/** 内容提示文字 */
-@property (nonatomic, copy) NSString *contentTitle;
+/** 
+ * 内容提示文字 
+ */
+@property (nonatomic, copy) NSString   *contentTitle;
 
 /** SGAlertViewBottomViewTypeOne */
-@property (nonatomic, strong) UIView *bottomViewOne;
+@property (nonatomic, strong) UIView   *bottomViewOne;
 /** SGAlertViewBottomViewTypeTwo */
-@property (nonatomic, strong) UIView *bottomViewTwo;
+@property (nonatomic, strong) UIView   *bottomViewTwo;
 @property (nonatomic, strong) UIButton *button;
 @property (nonatomic, strong) UIButton *right_button;
 @property (nonatomic, strong) UIButton *left_button;
@@ -55,6 +65,16 @@ static CGFloat const message_text_fond = 17;
 /** 内容字体大小 */
 static CGFloat const content_text_fond = 14;
 
+
+/**
+ 初始化实例
+
+ @param title 标题描述
+ @param delegate 代理
+ @param contentTitle 内容描述
+ @param alertViewBottomViewType 底部按钮类型
+ @return 返回一个SGAlertView实例化对象
+ */
 - (instancetype)initWithTitle:(NSString *)title delegate:(id<SGAlertViewDelegate>)delegate contentTitle:(NSString *)contentTitle alertViewBottomViewType:(SGAlertViewBottomViewType)alertViewBottomViewType {
     
     if (self = [super init]) {
@@ -76,7 +96,6 @@ static CGFloat const content_text_fond = 14;
 }
 
 - (void)show {
-    
     if (self.superview != nil) return;
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];

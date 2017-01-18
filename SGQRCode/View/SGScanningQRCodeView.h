@@ -15,6 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * 二维码扫描视图
+ */
 @interface SGScanningQRCodeView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame outsideViewLayer:(CALayer *)outsideViewLayer;

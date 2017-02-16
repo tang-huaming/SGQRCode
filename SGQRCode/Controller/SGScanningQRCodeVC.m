@@ -40,6 +40,8 @@
 @property (nonatomic, strong) SGScanningQRCodeView *scanningView;
 
 @property (nonatomic, strong) UIButton *right_Button;
+// 是否是第一次弹出扫描二维码结果的页面
+// 如果是，则会跳转到显示扫描结果的页面
 @property (nonatomic, assign) BOOL first_push;
 
 @end
@@ -66,6 +68,7 @@
     
     self.first_push = YES;
     
+    // 添加导航栏右侧按钮，从相册读取二维码
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:(UIBarButtonItemStyleDone) target:self action:@selector(rightBarButtonItenAction)];
 }
 
@@ -162,7 +165,7 @@
     // 9、启动会话
     [_session startRunning];
 }
-
+// MARK: AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     // 会频繁的扫描，调用代理方法
     

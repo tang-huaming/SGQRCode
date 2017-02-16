@@ -36,7 +36,7 @@
 }
 
 /**
- 跳转到扫描二维码页面
+ MARK: 跳转到扫描二维码页面
 
  @param sender 
  */
@@ -52,6 +52,7 @@
             SGAlertView *alertView = [SGAlertView alertViewWithTitle:@"⚠️ 警告" delegate:nil contentTitle:@"请去-> [设置 - 隐私 - 照片 - SGQRCodeExample] 打开访问开关" alertViewBottomViewType:(SGAlertViewBottomViewTypeOne)];
             [alertView show];
         } else if (status == PHAuthorizationStatusAuthorized) { // 用户允许当前应用访问相册
+            // TODO: 跳转
             SGScanningQRCodeVC *scanningQRCodeVC = [[SGScanningQRCodeVC alloc] init];
             [self.navigationController pushViewController:scanningQRCodeVC animated:YES];
         } else if (status == PHAuthorizationStatusNotDetermined) { // 用户还没有做出选择
